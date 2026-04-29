@@ -1,21 +1,17 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Welcome to the Manuel Maestre-Reyna Lab at the Department of Chemistry, National Taiwan University (NTU). We specialize in Structural Biology, Time-Resolved Crystallography, and Molecular Movies.">
-    <meta name="keywords" content="Manuel Maestre-Reyna, NTU Chemistry, Structural Biology, Time-Resolved Crystallography, DNA repair, Taiwan, 馬左仲, 台大化學">
-    <meta name="author" content="Manuel Maestre-Reyna Lab">
-    <title>Home | Manuel Maestre-Reyna Lab</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="kfq_srbXkEiq02nFAzgg5ARD4niaU4ukFNstE8GW_6w" />
+    <meta name="description" content="Welcome to the Manuel Maestre-Reyna Lab at the Department of Chemistry, National Taiwan University (NTU). We specialize in Structural Biology, Time-Resolved Crystallography, and Molecular Movies.">
+    <meta name="keywords" content="Manuel Maestre-Reyna, NTU Chemistry, Structural Biology, Time-Resolved Crystallography, DNA repair, Taiwan, 馬左仲, 台大化學">
+    <meta name="author" content="Manuel Maestre-Reyna Lab">
+    
     <title>Home | Manuel Maestre-Reyna Lab</title>
     <link rel="stylesheet" href="style.css">
+    
     <style>
         /* 專屬於首頁相簿的「3上2下」排版樣式 */
         .gallery-section {
@@ -28,7 +24,6 @@
         
         .gallery-grid {
             display: grid;
-            /* 使用 6 欄位系統來達成 3+2 的完美對齊 */
             grid-template-columns: repeat(6, 1fr);
             gap: 15px;
             margin-top: 1.5rem;
@@ -37,16 +32,16 @@
         .gallery-item {
             overflow: hidden;
             border-radius: 8px;
-            height: 280px; /* 稍微增加高度，讓照片更清晰 */
+            height: 280px; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* 前 3 張照片：每張佔 2 個欄位 (共 6 欄) */
+        /* 電腦版：前 3 張照片佔 2 格 */
         .gallery-item:nth-child(-n+3) {
             grid-column: span 2;
         }
 
-        /* 後 2 張照片：每張佔 3 個欄位 (共 6 欄) */
+        /* 電腦版：後 2 張照片佔 3 格 */
         .gallery-item:nth-child(n+4) {
             grid-column: span 3;
         }
@@ -69,13 +64,16 @@
             margin-bottom: 1rem;
         }
 
-        /* 手機版自動切換為單欄，確保閱讀體驗 */
+        /* 🌟 手機版終極防呆排版：直接取消 Grid，變成上下自然排列 */
         @media (max-width: 768px) {
             .gallery-grid {
-                grid-template-columns: 1fr;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
             }
-            .gallery-item:nth-child(n) {
-                grid-column: span 1;
+            .gallery-item {
+                width: 100% !important;
+                height: 250px !important; /* 手機上稍微縮小一點高度 */
             }
         }
     </style>
